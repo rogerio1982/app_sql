@@ -4,7 +4,6 @@ This project is an intelligent agent that converts natural language questions in
 
 ## Project Structure
 - `app.py`: Flask backend, integrates with LLM and executes queries.
-- `init_db.py`: Script to create and populate the SQLite database.
 - `templates/index.html`: Web interface for interacting with the agent.
 - `requirements.txt`: Project dependencies.
 - `.env`: OpenAI API key.
