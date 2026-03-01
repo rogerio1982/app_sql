@@ -3,13 +3,10 @@
 This project is an intelligent agent that converts natural language questions into SQL queries, executes those queries on a SQLite database, and returns the results through a user-friendly web interface.
 ##Features
 
-Simple web interface to submit questions about the data.
-
-Automatic conversion of questions into SQL using an LLM (OpenAI GPT-4o-mini).
-
-Secure query execution (only SELECT statements allowed).
-
-Displays the generated SQL and the query results.
+-Simple web interface to submit questions about the data.
+-Automatic conversion of questions into SQL using an LLM (OpenAI GPT-4o-mini).
+-Secure query execution (only SELECT statements allowed).
+-Displays the generated SQL and the query results.
 
 ## Project Structure
 - `app.py`: Flask backend, integrates with LLM and executes queries.
