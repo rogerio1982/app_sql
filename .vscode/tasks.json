@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Rodar app Flask",
+			"type": "shell",
+			"command": "C:/Users/roger/Desktop/aws/app_sql/.venv/Scripts/python.exe app.py",
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agente IA SQL</title>
+</head>
+<body>
+    <h1>Agente de IA para Consultas SQL</h1>
+    
+    <input type="text" id="pergunta" size="60" placeholder="Ex: Qual o total vendido por categoria?">
+    <button onclick="enviar()">Consultar</button>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        function enviar() {
+            const pergunta = document.getElementById("pergunta").value;
+            const resultado = document.getElementById("resultado");
+            resultado.textContent = "Consultando...";
+            fetch("/consulta", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({pergunta})
+            })
+            .then(res => {
+                if (!res.ok) throw new Error("Erro na resposta do servidor");
+                return res.json();
+            })
+            .then(data => {
+                resultado.textContent =
+                    "SQL Gerado:\n" + (data.sql_gerado || "-") +
+                    "\n\nResultado:\n" + (data.resultado ? JSON.stringify(data.resultado, null, 2) : "-");
+            })
+            .catch(err => {
+                resultado.textContent = "Erro: " + err.message;
+            });
+        }
+    </script>
+</body>
+</html>
