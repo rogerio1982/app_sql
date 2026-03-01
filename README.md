@@ -1,51 +1,66 @@
-# Agente de IA para Consultas SQL
+# AI Agent for SQL Queries
 
-Este projeto é um agente inteligente que converte perguntas em linguagem natural em consultas SQL, executa essas consultas em um banco de dados SQLite e retorna os resultados de forma amigável via interface web.
+This project is an intelligent agent that converts natural language questions into SQL queries, executes those queries on a SQLite database, and returns the results through a user-friendly web interface.
+##Features
 
-## Funcionalidades
-- Interface web simples para enviar perguntas sobre os dados.
-- Conversão automática de perguntas em SQL usando LLM (OpenAI GPT-4o-mini).
-- Execução segura de consultas (apenas SELECT permitido).
-- Exibição do SQL gerado e do resultado da consulta.
+Simple web interface to submit questions about the data.
 
-## Estrutura do Projeto
-- `app.py`: Backend Flask, integra com o LLM e executa as consultas.
-- `init_db.py`: Script para criar e popular o banco de dados SQLite.
-- `templates/index.html`: Interface web para interação com o agente.
-- `requirements.txt`: Dependências do projeto.
-- `.env`: Chave de API da OpenAI.
+Automatic conversion of questions into SQL using an LLM (OpenAI GPT-4o-mini).
 
-## Como usar
-1. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Configure sua chave OpenAI em `.env`.
-3. Inicialize o banco de dados:
-   ```bash
-   python init_db.py
-   ```
-4. Rode o servidor Flask:
-   ```bash
-   python app.py
-   ```
-5. Acesse `http://localhost:8080` no navegador.
+Secure query execution (only SELECT statements allowed).
 
-## Observações
-- Apenas comandos SELECT são permitidos por segurança.
-- O modelo LLM gera o SQL com base no schema do banco.
-- O projeto pode ser expandido para outros bancos ou comandos.
+Displays the generated SQL and the query results.
 
-## Exemplo de uso
-Pergunta: "Liste os produtos cadastrados"
+## Project Structure
+- `app.py`: Flask backend, integrates with LLM and executes queries.
+- `init_db.py`: Script to create and populate the SQLite database.
+- `templates/index.html`: Web interface for interacting with the agent.
+- `requirements.txt`: Project dependencies.
+- `.env`: OpenAI API key.
 
-SQL Gerado:
+## How to use
+
+1. Install the dependencies:
+
+``bash
+pip install -r requirements.txt
+
+```
+2. Configure your OpenAI key in `.env`.
+
+3. Initialize the database:
+
+``bash
+python init_db.py
+
+```
+4. Run the Flask server:
+
+``bash
+python app.py
+
+```
+5. Access `http://localhost:8080` in your browser.
+
+## Notes
+- Only SELECT commands are allowed for security reasons.
+
+- The LLM model generates SQL based on the database schema.
+
+- The project can be expanded to other databases or commands.
+
+## Example of use
+Question: "List the registered products"
+
+Generated SQL:
+
 ```sql
-SELECT * FROM produtos;
+SELECT * FROM products;
+
 ```
 
-Resultado: (lista dos produtos, se a tabela existir)
+Result: (list of products, if the table exists)
 
 ---
 
-Desenvolvido por Roger, 2026.
+Developed by Roger, 2026.
