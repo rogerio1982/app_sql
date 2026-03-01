@@ -1,0 +1,23 @@
+# Ignorar arquivos de ambiente e dependências
+.env
+*.env
+
+# Ignorar arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar ambientes virtuais
+.venv/
+venv/
+ENV/
+
+# Ignorar arquivos do VSCode
+.vscode/
+
+# Ignorar banco de dados local
+*.db
+
+# Ignorar arquivos de log
+*.log
